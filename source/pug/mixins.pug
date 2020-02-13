@@ -1,0 +1,195 @@
+mixin articles-section-title(title, link, href)
+    .articles-section-title
+        h2= title
+        a.link.link--black(href=href)= link
+
+mixin article-card(href, title, date, dateAttr, text, img1x, img2x, imgWidth, imgHeight, prefix)
+    article.article-card(class=!prefix ? "" : "article-card" + prefix)
+        a.article-card__link(href=href)
+            if img1x
+                .article-card__photo
+                    img(src=img1x srcset=img2x width=imgWidth height=imgHeight alt=title)
+            .article-card__container(class=!prefix ? "" : "article-card__container" + prefix)
+                time(datetime=dateAttr)= date
+                h3 !{title}
+                if text
+                    p !{text}
+
+mixin breadcrumbs(breadcrumbsItems)
+    ul.breadcrumbs__list
+        for i in breadcrumbsItems
+            li(class="breadcrumbs__item")
+                if i.active === true
+                    a.breadcrumbs__item-link=i.text
+                else
+                    a.breadcrumbs__item-link(href=i.link)=i.text
+
+mixin person(person, addClass)
+    .person-card
+        .person-card__wrapper(class= addClass + "__item-wrapper")
+            .person-card__name(class= addClass + "__name")
+                p !{person.name + " "}
+                    span !{person.surname}
+            .person-card__description(class= addClass + "__description")
+                p !{person.description}
+        .person-card__photo(class= addClass + "__photo")
+            img(src=person.src, srcset=person.srcset, alt=person.alt, width=person.width, height=person.height)
+
+mixin logo-card(data, addClass)
+    li.logo-card__item(class= addClass + "__item")
+        .logo-card__description(class= addClass + "__description")
+            p !{data.description}
+        .logo-card__logo(class= addClass + "__logo")
+            img(src=data.src, srcset=data.srcset, alt=data.alt, width=data.width, height=data.height)
+
+mixin announcement-title(title, link, href)
+    .announcement__title
+        h2= title
+        a.link.link--black(href=href)= link
+
+mixin description(descriptions)
+    for i in descriptions
+        p !{i}
+
+mixin menu-items(item)
+    li.gromyko__item(class=item.addlClass ? "gromyko__item--" +[item.addlClass] : "")
+        a(href=item.href)
+            p.gromyko__item-text= item.text
+
+mixin book-card(data, modifiers)
+    article.book-card(class= !modifiers.card ? "" : "book-card" + modifiers.card)
+        a.book-card__link(href=data.href class= !modifiers.link ? "" : "book-card__link" + modifiers.link)
+            .book-card__photo(class= !modifiers.photo ? "" : "book-card__photo" + modifiers.photo)
+                img(src=data.src, srcset=data.srcset, alt=data.alt, width=data.imgWidth, height=data.imgHeight)
+            .book-card__description(class= !modifiers.description ? "" : "book-card__description" + modifiers.description)
+                p !{data.author}
+                h3 !{data.title}
+                p.publishinHouse !{data.publishinHouse}
+
+mixin pdf-link(link)
+    .pdf-link
+        svg(width="60" height="60")
+            use(xlink:href="#pdf")
+        a(href="#") !{link}
+
+mixin site-main(blockClass, addClass)
+    section.site-main__section(class= addClass ? blockClass + " " + addClass : blockClass)
+        .site-main__section-wrapper
+            div(class= addClass ? blockClass + "__container" + " " + addClass + "__container" : blockClass + "__container")
+                block
+
+mixin burger(text)
+    .filter
+        p !{text}
+        button.filter-burger(type="button" aria-label="Выбрать фильтр")
+            span.filter__burger-line
+            span.filter__burger-line
+            span.filter__burger-line
+
+mixin paginator(start, end, href, active)
+    .paginator
+        button.paginator-btn.paginator-btn--pre(type="button" aria-label="Назад")
+        ul.paginator__list
+            while start <= end
+                if active != start
+                    li.paginator__item
+                        a.paginator__link(href= href + start + ".html")= start++
+                else
+                    li.paginator__item.paginator__item--active
+                        a.paginator__link= start++
+        button.paginator-btn.paginator-btn--next(type="button" aria-label="Вперёд")
+
+mixin all-cards(blockName, dataBigBlock, dataSmallBlock, prefixBig, prefixSmall)
+    if dataSmallBlock
+        .all-cards
+            .all-cards__big-container
+                ul.all-cards__list
+                    for i in dataBigBlock
+                        li.all-cards__item
+                            +article-card(i.href, i.title, i.date, i.datetime, i.description, i.src, i.srcset, i.imgWidth, i.imgHeight, prefixBig)
+            .all-cards__small-container
+                ul.all-cards__list
+                    for i in dataSmallBlock
+                        li.all-cards__item
+                            +article-card(i.href, i.title, i.date, i.datetime, i.description, i.src, i.srcset, i.imgWidth, i.imgHeight, prefixSmall)
+    else
+        .all-cards
+            .all-cards__container
+                ul.all-cards__list
+                    for i in dataBigBlock
+                        li.all-cards__item
+                            +article-card(i.href, i.title, i.date, i.datetime, i.description, i.src, i.srcset, i.imgWidth, i.imgHeight, prefixBig)
+
+
+mixin council(blockThis, content, modifiers)
+    +site-main("council", blockThis.name)
+        h2 !{blockThis.title}
+        div(class=blockThis.jsClass)
+            ul.council__list
+                for i in content
+                    li.council__item(class="council__item" + modifiers.item)
+                        +person(i, "council")
+        .council__controls-wrapper
+            block
+
+mixin basic(blockClass, title, text, img)
+    +site-main("basic", blockClass)
+        .basic__photo(class= blockClass + "__photo")
+        .basic__wrapper(class= blockClass + "__wrapper")
+            h2 !{title}
+            .basic__description(class= blockClass + "__description")
+                +description(text)
+        if block
+            block
+
+mixin controls(jsClassPrev, jsClassNext)
+    .controls
+        button.controls__button.controls__button--prev(class=jsClassPrev type="button" value="Назад")
+            svg(width="62" height="8")
+                use(xlink:href="#slider-arrow-long")
+        button.controls__button.controls__button--next(class=jsClassNext type="button" value="Вперед")
+            svg(width="62" height="8")
+                use(xlink:href="#slider-arrow-long")
+
+mixin photoSlider(slider)
+    section(class="photo-slider" class=slider.sliderClass)
+        h2.visually-hidden Слайдер
+        .photo-slider__container.swiper-container
+            .photo-slider__list.swiper-wrapper
+                each item in slider.src
+                    .photo-slider__item.swiper-slide
+                        a.photo-slider__link(href="#")
+                            img.photo-slider__img(src=item+'.jpg' srcset=item+'@2x.jpg'
+                            alt="photo-slider" width="438" height="292")
+        .photo-slider__btn-block
+            button(class='photo-slider__btn js-photo-slider-btn-prev' type="button")
+                svg(width="32" height="36")
+                    use(xlink:href="#slider-arrow-long")
+            button(class='photo-slider__btn js-photo-slider-btn-next' type="button")
+                svg(width="32" height="36")
+                    use(xlink:href="#slider-arrow-long")
+
+mixin btn-open-text()
+    .toogle-text
+        button.toogle-text__btn(type="button" aria-label="Развернуть текст")
+
+mixin quote(data, addClass)
+    .quote__author
+        +person(data.person, addClass)
+    if text
+        .quote__source
+            p !{data.quote.text}
+        blockquote !{data.quote.blockquote}
+    else
+        blockquote !{data.quote.blockquote}
+
+mixin announcement(blockThis, titles, data, modifiers)
+    +site-main("announcement", blockThis.name)
+        +announcement-title(titles.title, titles.link, titles.href)
+        .announcement__content(class=blockThis.jsClass)
+                ul.announcement__list
+                    for i in data
+                        li.announcement__item(class= "announcement__item" + modifiers.item)
+                            block items
+        .announcement__controls-wrapper
+            +controls(blockThis.jsClass + "-button" + " " + blockThis.jsClass + "-button--prev", blockThis.jsClass + "-button" + " " + blockThis.jsClass + "-button--next")

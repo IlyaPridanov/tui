@@ -1,0 +1,26 @@
+header.header
+    .container.header__row
+        a(href="index.html").header__logo
+            div
+                svg(width="15" height="25")
+                    use(xlink:href="#icon-logo")
+                span Сад<br>Эко
+            span.header__logo-text Питомник Туй
+        nav.nav.nav--inactive.js-nav-header
+            ul.nav__list
+                li.nav__item
+                    a(href="#" class="nav__link") Галерея
+                li.nav__item
+                    a(href="#" class="nav__link") Каталог
+                li.nav__item
+                    a(href="#" class="nav__link") Отзывы
+                li.nav__item
+                    a(href="#" class="nav__link") Консультация
+                li.nav__item
+                    a(href="#" class="nav__link") Посадка за 1 день
+        a(href="#").header__link.button Заказать звонок
+        button.header__btn.hamburger(class="header__btn" type="button" aria-label="Кнопка открывающая мобильное меню")
+            span.hamburger__bar.hamburger__bar--bar1
+            span.hamburger__bar.hamburger__bar--bar2
+            span.hamburger__bar.hamburger__bar--bar3
+            span.hamburger__bar.hamburger__bar--bar4

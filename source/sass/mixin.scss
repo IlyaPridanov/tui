@@ -1,0 +1,16 @@
+@mixin hover() {
+    &:hover,
+    &:focus,
+    &:active {
+        cursor: pointer;
+
+        text-decoration: underline;
+        opacity: 0.8;
+    }
+}
+
+@mixin list() {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

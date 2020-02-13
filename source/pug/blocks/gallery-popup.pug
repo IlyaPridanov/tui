@@ -1,0 +1,42 @@
+.gallery-popup
+    .slider
+        .gallery-popup__container.swiper-container
+            .gallery-popup__list.swiper-wrapper
+                //- .gallery-popup__item.swiper-slide
+                //-     picture
+                //-         source(srcset="img/inside-nursery-1.webp" type="image/webp")
+                //-         img(src="img/inside-nursery-1.png", alt="питомник изнутри фото")
+                //- .gallery-popup__item.swiper-slide
+                //-     picture
+                //-         source(srcset="img/inside-nursery-2.webp" type="image/webp")
+                //-         img(src="img/inside-nursery-2.png", alt="питомник изнутри фото")
+                //- .gallery-popup__item.swiper-slide
+                //-     picture
+                //-         source(srcset="img/inside-nursery-3.webp" type="image/webp")
+                //-         img(src="img/inside-nursery-3.png", alt="питомник изнутри фото")
+                //- .gallery-popup__item.swiper-slide
+                //-     picture
+                //-         source(srcset="img/inside-nursery-4.webp" type="image/webp")
+                //-         img(src="img/inside-nursery-4.png", alt="питомник изнутри фото")
+                //- .gallery-popup__item.swiper-slide
+                //-     picture
+                //-         source(srcset="img/inside-nursery-5.webp" type="image/webp")
+                //-         img(src="img/inside-nursery-5.png", alt="питомник изнутри фото")
+                //- .gallery-popup__item.swiper-slide
+                //-     picture
+                //-         source(srcset="img/inside-nursery-6.webp" type="image/webp")
+                //-         img(src="img/inside-nursery-6.png", alt="питомник изнутри фото")
+        button.gallery-popup__btn.js-btn-prev(type="button")
+            svg(width="21" height="36")
+                use(xlink:href="#icon-arrow-left")
+        button.gallery-popup__btn.js-btn-next(type="button")
+            svg(width="21" height="36")
+                use(xlink:href="#icon-arrow-left")
+        button.gallery-popup__btn-close.js-btn-next(type="button")
+            svg(width="35" height="35")
+                use(xlink:href="#icon-close")
+        template(id="gallery-template")
+            .gallery-popup__item.swiper-slide
+                picture
+                    source(srcset="" type="image/webp")
+                    img(src="", alt="питомник изнутри фото")

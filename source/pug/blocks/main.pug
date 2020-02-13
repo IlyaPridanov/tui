@@ -1,0 +1,28 @@
+section.main
+    .container.main__row
+        .main__column
+            h1.main__caption Туи из питомника с доставкой и скидкой 50-70%
+            a(href="#").main__link.button Оставить заявку
+            ul.main__list
+                li.main__item
+                    svg(width="30" height="30")
+                        use(xlink:href="#icon-main-plus")
+                    |Без посредников
+                li.main__item
+                    svg(width="30" height="30")
+                        use(xlink:href="#icon-main-plus")
+                    |Посадка туи за 1 день
+                li.main__item
+                    svg(width="30" height="30")
+                        use(xlink:href="#icon-main-plus")
+                    |Без предоплаты
+        .main__form.main-form
+            form(action="#" method="POST")
+                p.main-form__caption Задайте вопрос специалисту
+                label
+                    span.visually-hidden Введите имя
+                    input(type="text" name="name" placeholder="Ваше имя").main-form__input
+                label
+                    span.visually-hidden Введите телефон
+                    input(type="text" name="tel" placeholder="Ваш телефон").main-form__input.js-tel-input
+                button(type="submit").main-form__btn.button Перезвоните мне

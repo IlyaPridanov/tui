@@ -1,0 +1,12 @@
+.container {
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 1345px;
+    max-width: 100%;
+}
+
+@media(max-width:$mobile-width) {
+    .container {
+        padding: 0 15px;
+    }
+}
