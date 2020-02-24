@@ -1,66 +1,66 @@
-'use strict';
+// 'use strict';
 
-(function () {
-    let template = document.querySelector('#gallery-template');
-    let popup = document.querySelector('.gallery-popup');
-    let popupList = document.querySelector('.gallery-popup__list');
-    let buttonClose = document.querySelector('.gallery-popup__btn-close');
+// (function () {
+//     let template = document.querySelector('#gallery-template');
+//     let popup = document.querySelector('.gallery-popup');
+//     let popupList = document.querySelector('.gallery-popup__list');
+//     let buttonClose = document.querySelector('.gallery-popup__btn-close');
+//     let sliderGallery = document.querySelector('.slider-gallery');
 
-    let row = document.querySelector('.gallery__row');
-    let card = document.querySelectorAll('.gallery__img');
-    let button = document.querySelector('.gallery__btn');
-    let flag = true;
+//     let card = document.querySelectorAll('.gallery__img');
 
-    let mobile = window.matchMedia("(max-width: 767px)").matches;
-    let rowHeight = row.offsetHeight;
+//     // let sliderContainers = document.querySelector('.slider-popup');
 
-    let open = function () {
-        popup.classList.remove('hidden');
-    }
+//     let open = function () {
+//         popup.classList.remove('visually-hidden');
+//     }
 
-    let close = function () {
-        popup.classList.add('hidden');
-    }
+//     let close = function () {
+//         popup.classList.add('visually-hidden');
+//         /*Удаляет все дочерние элементы у слайдера*/
+//         while (popupList.firstChild) {
+//             popupList.removeChild(popupList.firstChild);
+//         }
+//     }
 
-    card.forEach( function(item) {
-        let cardPopup = template.content.cloneNode(true).querySelector('div');
-        cardPopup.querySelector('img').setAttribute('src' , item.querySelector('img').getAttribute('src'));
-        cardPopup.querySelector('source').setAttribute('srcset' , item.querySelector('source').getAttribute('srcset'));
-        console.log(cardPopup);
-        popupList.appendChild(cardPopup);
-    })
+//     /*Сортирует массив индексов - сначала идут все индексы после выбранного а
+//     потом добавляются те что были до*/
 
-    card.forEach( function(item) {
-        item.addEventListener('click' , function() {
-            open();
-        })
-    })
+//     let sort = function (arr , indexSort) {
+//         let indexArr = [];
+//         for (let j = 0;j < arr.length; j++) {
+//             indexArr[j] = j;
+//         }
+//         let newIndex = indexArr.splice(indexSort,(indexArr.length - indexSort)).concat(indexArr.slice(0 , indexSort));
 
-    // popup.addEventListener('click' , function (evt) {
-    //     if ((evt.target === this)) {
-    //         close();
-    //     }
-    // })
+//         return newIndex;
+//     }
 
-    buttonClose.addEventListener('click' , function () {
-        close();
-    })
+//     /*при каждом клике сохдаёт новый массив слайдов
+//     в зависимости от кликнутого
+//     и запускает слайдер*/
 
-    if (mobile) {
-        button.classList.remove('hidden');
-        row.classList.add('gallery__row--inactive');
-        button.addEventListener('click' , function () {
-            if (flag) {
-                row.classList.remove('gallery__row--inactive');
-                row.style.maxHeight = rowHeight + 'px';
-                button.textContent = 'Скрыть';
-                flag = false;
-            } else {
-                row.classList.add('gallery__row--inactive');
-                row.style.maxHeight = '';
-                button.textContent = 'Посмотреть ещё';
-                flag = true;
-            }
-        })
-    }
-})();
+//     card.forEach( function(item , index) {
+//         item.addEventListener('click' , function() {
+//             let newIndexArr = sort(card , index);
+//             newIndexArr.forEach( function(indexItem) {
+//                 let cardPopup = template.content.cloneNode(true).querySelector('div');
+//                 cardPopup.querySelector('img').setAttribute('src' , card[indexItem].querySelector('img').getAttribute('src'));
+//                 cardPopup.querySelector('source').setAttribute('srcset' , card[indexItem].querySelector('source').getAttribute('srcset'));
+//                 popupList.appendChild(cardPopup);
+//             })
+//             window.getSlider(sliderGallery);
+//             open();
+//         })
+//     })
+
+//     // popup.addEventListener('click' , function (evt) {
+//     //     if ((evt.target === this)) {
+//     //         close();
+//     //     }
+//     // })
+
+//     buttonClose.addEventListener('click' , function () {
+//         close();
+//     })
+// })();

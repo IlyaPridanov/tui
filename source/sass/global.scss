@@ -54,11 +54,6 @@ body {
     line-height: 22px;
     font-weight: 400;
     color: $black;
-
-    background-image: url("../img/main.png");
-    background-repeat: no-repeat;
-    background-size: auto auto;
-    background-position: center top;
 }
 
 main {
@@ -74,7 +69,7 @@ img {
     height: auto;
 }
 
-.visually-hidden {
+body .visually-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -93,15 +88,4 @@ img {
 
 .swiper-slide {
     box-sizing: border-box;
-}
-
-@media(max-width:$tablet-width) {
-    body {
-        background-size: 1856px auto;
-        background-position: -440px -72px;
-    }
-}
-
-@media(max-width:$mobile-width) {
-
 }

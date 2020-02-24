@@ -14,12 +14,12 @@ $primary-color: #FEF7DD;
 $primary-color-middle: #ECECEC;
 $secondary-color: #73B055;
 $secondary-color-dark: #19300E;
+$secondary-color-middle: #273D1D;
 
 $blue: #3F919C;
 $green-opacity: rgba(70, 123, 44, 0.4);
 
-$transition-time: 0.2s;
-$transition-function: ease-in;
+$transition: all 0.2s ease-in;
 
 $mobile-width: 768px - 1px;
 $tablet-width: 900px;

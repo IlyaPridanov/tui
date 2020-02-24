@@ -5,6 +5,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta name="description" content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit.">
     <title>tui</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
   <body><div style="display:none"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-arrow-left" viewBox="0 0 21 36">
@@ -41,7 +42,7 @@
       <section class="main">
         <div class="container main__row">
           <div class="main__column">
-            <h1 class="main__caption">Туи из питомника с доставкой и скидкой 50-70%</h1><a class="main__link button" href="#">Оставить заявку</a>
+            <h1 class="main__caption">Туи из питомника с доставкой и&nbsp;скидкой 50-70%</h1><a class="main__link button" href="#">Оставить заявку</a>
             <ul class="main__list">
               <li class="main__item">
                 <svg width="30" height="30">
@@ -76,34 +77,34 @@
       </section>
       <section class="gallery">
         <div class="container">
-          <h2 class="gallery__caption h2">Посмотрите на&thinsp;<a class="gallery__caption-link" href="#">питомник изнутри</a></h2>
+          <h2 class="gallery__caption h2">Посмотрите на&nbsp;<a href="#">питомник изнутри</a></h2>
           <div class="gallery__row">
-            <div class="gallery__img">
+            <div class="gallery__img" data-index="0">
               <picture>
                 <source srcset="img/inside-nursery-1.webp" type="image/webp"><img src="img/inside-nursery-1.png" alt="питомник изнутри фото">
               </picture>
             </div>
-            <div class="gallery__img">
+            <div class="gallery__img" data-index="1">
               <picture>
                 <source srcset="img/inside-nursery-2.webp" type="image/webp"><img src="img/inside-nursery-2.png" alt="питомник изнутри фото">
               </picture>
             </div>
-            <div class="gallery__img">
+            <div class="gallery__img" data-index="2">
               <picture>
                 <source srcset="img/inside-nursery-3.webp" type="image/webp"><img src="img/inside-nursery-3.png" alt="питомник изнутри фото">
               </picture>
             </div>
-            <div class="gallery__img">
+            <div class="gallery__img" data-index="3">
               <picture>
                 <source srcset="img/inside-nursery-4.webp" type="image/webp"><img src="img/inside-nursery-4.png" alt="питомник изнутри фото">
               </picture>
             </div>
-            <div class="gallery__img">
+            <div class="gallery__img" data-index="4">
               <picture>
                 <source srcset="img/inside-nursery-5.webp" type="image/webp"><img src="img/inside-nursery-5.png" alt="питомник изнутри фото">
               </picture>
             </div>
-            <div class="gallery__img">
+            <div class="gallery__img" data-index="5">
               <picture>
                 <source srcset="img/inside-nursery-6.webp" type="image/webp"><img src="img/inside-nursery-6.png" alt="питомник изнутри фото">
               </picture>
@@ -112,10 +113,78 @@
           <button class="gallery__btn hidden" type="button">Посмотреть ещё</button>
         </div>
       </section>
+      <section class="catalog">
+        <div class="container">
+          <h2 class="catalog__caption h2"><a href="#">Каталог&nbsp;</a>туй</h2>
+          <ul class="catalog__list fancy-container">
+            <li class="catalog__item">
+              <div class="catalog__img" data-index="0">
+                <picture>
+                  <source srcset="img/catalog-1.webp" type="image/webp"><img src="img/catalog-1.png" alt="Фото каталога">
+                </picture>
+              </div>
+              <p class="catalog__item-caption">Туя Брабант</p>
+              <ul class="catalog__parameter-list">
+                <li class="catalog__parameter-item">0.3 - 6м</li>
+                <li class="catalog__parameter-item">от&nbsp;<span>400 Р</span></li>
+              </ul>
+            </li>
+            <li class="catalog__item">
+              <div class="catalog__img" data-index="1">
+                <picture>
+                  <source srcset="img/catalog-2.webp" type="image/webp"><img src="img/catalog-2.png" alt="Фото каталога">
+                </picture>
+              </div>
+              <p class="catalog__item-caption">Туя крупномер</p>
+              <ul class="catalog__parameter-list">
+                <li class="catalog__parameter-item">2 - 9м</li>
+                <li class="catalog__parameter-item">от&nbsp;<span>14 000 Р</span></li>
+              </ul>
+            </li>
+            <li class="catalog__item">
+              <div class="catalog__img" data-index="2">
+                <picture>
+                  <source srcset="img/catalog-3.webp" type="image/webp"><img src="img/catalog-3.png" alt="Фото каталога">
+                </picture>
+              </div>
+              <p class="catalog__item-caption">Туя Шаровидная</p>
+              <ul class="catalog__parameter-list">
+                <li class="catalog__parameter-item">0.1 - 3м</li>
+                <li class="catalog__parameter-item">от&nbsp;<span>2 200 Р</span></li>
+              </ul>
+            </li>
+            <li class="catalog__item">
+              <div class="catalog__img" data-index="3">
+                <picture>
+                  <source srcset="img/catalog-4.webp" type="image/webp"><img src="img/catalog-4.png" alt="Фото каталога">
+                </picture>
+              </div>
+              <p class="catalog__item-caption">Туя Смарагд</p>
+              <ul class="catalog__parameter-list">
+                <li class="catalog__parameter-item">0.5 - 6м</li>
+                <li class="catalog__parameter-item">от&nbsp;<span>600 Р</span></li>
+              </ul>
+            </li>
+            <li class="catalog__item">
+              <div class="catalog__img" data-index="4">
+                <picture>
+                  <source srcset="img/catalog-5.webp" type="image/webp"><img src="img/catalog-5.png" alt="Фото каталога">
+                </picture>
+              </div>
+              <p class="catalog__item-caption">Туя Blue Arrow</p>
+              <ul class="catalog__parameter-list">
+                <li class="catalog__parameter-item">2.2 - 5м</li>
+                <li class="catalog__parameter-item">от&nbsp;<span>3 000 Р</span></li>
+              </ul>
+            </li>
+          </ul>
+          <p class="catalog__text">Подключите консультанта для помощи в выборе</p><a class="catalog__btn button" href="#">+ Консультант</a>
+        </div>
+      </section>
     </main>
     <footer class="footer"></footer>
-    <div class="gallery-popup">
-      <div class="slider">
+    <div class="gallery-popup visually-hidden">
+      <div class="slider-gallery">
         <div class="gallery-popup__container swiper-container">
           <div class="gallery-popup__list swiper-wrapper"></div>
         </div>

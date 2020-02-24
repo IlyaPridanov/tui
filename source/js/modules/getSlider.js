@@ -3,7 +3,7 @@
 (function () {
     var sliderContainers = document.querySelectorAll('.slider');
 
-    var getPhotoSlider = function (slider) {
+    var getSlider = function (slider) {
         if (slider) {
             var container = slider.querySelector('.swiper-container');
             var next = slider.querySelector('.js-btn-next');
@@ -22,7 +22,7 @@
                 clickable: true,
                 },
                 slidesPerView: slidesPerView,
-                spaceBetween: 20,
+                spaceBetween: spaceBetween,
                 // breakpoints: {
                 //   320: {
                 //     slidesPerView: 1,
@@ -43,7 +43,9 @@
 
     window.onload = function () {
         sliderContainers.forEach(function (currentValue) {
-            getPhotoSlider(currentValue);
+            getSlider(currentValue);
         });
     };
+
+    window.getSlider = getSlider;
 })();

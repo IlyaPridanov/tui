@@ -57,3 +57,30 @@
     border: none;
     background-color: $secondary-color;
 }
+
+@media(max-width:$tablet-width) {
+    .main-form {
+        min-width: 353px;
+        padding: 54px 52px 80px;
+    }
+
+    .main-form__caption {
+        font-size: 18px;
+        margin: 0 10px 35px;
+    }
+
+    .main-form__input {
+        margin-bottom: 23px;
+        padding: 11px 21px 12px;
+    }
+
+    .main-form__btn {
+        height: 45px;
+    }
+}
+
+@media(max-width:$mobile-width) {
+    .main-form {
+        display: none;
+    }
+}

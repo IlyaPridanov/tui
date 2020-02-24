@@ -6,6 +6,8 @@
 }
 
 .header__logo {
+    position: relative;
+    z-index: 5;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,7 +53,7 @@
 
         background-color: $secondary-color;
 
-        transition: all $transition-time $transition-function;
+        transition: $transition;
     }
 }
 
@@ -64,6 +66,8 @@
 }
 
 .header__link {
+    position: relative;
+    z-index: 5;
     margin-top: 12px;
     width: 201px;
     height: 50px;
@@ -79,7 +83,7 @@
 
         background-color: $secondary-color;
         border-color: $secondary-color;
-        transition: all $transition-time $transition-function;
+        transition: $transition;
     }
 }
 
