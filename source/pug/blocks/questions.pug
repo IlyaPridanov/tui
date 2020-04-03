@@ -1,0 +1,24 @@
+section.questions
+    .container
+        picture
+            source(media="(max-width: 767px)" srcset="img/tuya-mobile.webp" type="image/webp")
+            source(media="(max-width: 767px)" srcset="img/tuya-mobile.png")
+            source(media="(max-width: 1200px)" srcset="img/tuya-tablet.webp" type="image/webp")
+            source(media="(max-width: 1200px)" srcset="img/tuya-tablet.png")
+            source(srcset="img/tuya.webp" type="image/webp")
+            img.questions__img(src="img/tuya.png")
+        h2.questions__caption.h2
+            |Есть вопрос? Ответим&nbsp;через&nbsp;
+            a(href="#") 36
+            |&nbsp;секунд
+        form(action="#" method="POST")
+            p.questions__text Оставьте заявку и наш специалист проконсультирует вас
+            .questions__row
+                label
+                    span.visually-hidden Введите имя
+                    input(type="text" name="name" placeholder="Ваше имя").questions__input
+                label
+                    span.visually-hidden Введите телефон
+                    input(type="text" name="tel" placeholder="Ваш телефон").questions__input.js-tel-input
+                button(type="submit").questions__btn.button Заказать звонок
+

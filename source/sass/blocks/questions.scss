@@ -1,0 +1,156 @@
+.questions {
+    margin-bottom: 99px;
+    padding: 64px 0;
+    position: relative;
+    background-color: $green-light-opacity;
+}
+
+.questions__img {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -188px;
+}
+
+.questions__caption {
+    margin: 0;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.questions__text {
+    margin: 0;
+    margin-bottom: 26px;
+
+    font-family: $roboto;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.71;
+    text-align: center;
+    color: $secondary-color-dark;
+}
+
+.questions__row {
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    grid-gap: 29px;
+    width: 928px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.questions__input {
+    display: block;
+    width: 100%;
+    padding: 12px 23px 16px;
+
+    font-family: $roboto;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.19;
+    color: $black;
+
+    background-color: $white;
+    border: 1px solid transparent;
+    outline: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+        border: 1px solid $secondary-color;
+    }
+
+    &::placeholder {
+        font-family: $roboto;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.19;
+        color: $black;
+
+        opacity: 0.5;
+    }
+}
+
+.questions__btn {
+    @include hover();
+    padding: 0;
+    width: 100%;
+
+    color: $white;
+
+    background-color: $secondary-color;
+    border: none;
+}
+
+@media (max-width:$min2-desktop) {
+    .questions {
+        margin-bottom: 57px;
+        padding: 25px 0 60px;
+    }
+
+    .questions__img {
+        top: -80px;
+    }
+
+    .questions__caption {
+        margin: 0 178px 16px;
+
+        letter-spacing: normal;
+        line-height: 1.4;
+        font-size: 29px;
+    }
+
+    .questions__text {
+        margin: 0 170px 29px;
+
+        font-size: 16px;
+        line-height: 1.3;
+    }
+
+    .questions__row {
+        width: 693px;
+        grid-gap: 16px;
+    }
+
+    .questions__input {
+        padding: 10px 13px 9px;
+    }
+}
+
+@media (max-width:$mobile-width) {
+    .questions {
+        margin-bottom: 39px;
+        padding: 34px 0 175px;
+    }
+
+    .questions__img {
+        top: auto;
+        bottom: 15px;
+    }
+
+    .questions__caption {
+        margin: 0 0 16px;
+
+        font-size: 22px;
+        line-height: 1.25;
+    }
+
+    .questions__text {
+        margin: 0 0 44px;
+    }
+
+    .questions__row {
+        display: block;
+        width: 100%;
+    }
+
+    .questions__input {
+        margin-bottom: 20px;
+        padding: 16px 26px 13px;
+    }
+
+    .questions__btn {
+        height: 50px;
+    }
+}

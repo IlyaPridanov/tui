@@ -14,38 +14,28 @@
             return new window.Swiper(container, {
                 loop: true,
                 navigation: {
-                nextEl: next,
-                prevEl: prev,
+                    nextEl: next,
+                    prevEl: prev,
                 },
                 pagination: {
-                el: pagination,
-                clickable: true,
+                    el: pagination,
+                    clickable: true,
                 },
-                slidesPerView: slidesPerView,
-                spaceBetween: spaceBetween,
-                // breakpoints: {
-                //   320: {
-                //     slidesPerView: 1,
-                //     spaceBetween: spaceBetween,
-                //   },
-                //   600: {
-                //     slidesPerView: slidesPerView600,
-                //     spaceBetween: spaceBetween,
-                //   },
-                //   1000: {
-                //     slidesPerView: slidesPerView,
-                //     spaceBetween: spaceBetween,
-                //   },
-                // },
+                breakpoints: {
+                  320: {
+                    slidesPerView: 1,
+                    spaceBetween: spaceBetween,
+                  },
+                  1000: {
+                    slidesPerView: slidesPerView,
+                    spaceBetween: spaceBetween,
+                  },
+                },
             });
         }
     };
 
-    window.onload = function () {
-        sliderContainers.forEach(function (currentValue) {
-            getSlider(currentValue);
-        });
-    };
-
-    window.getSlider = getSlider;
+    sliderContainers.forEach(function (currentValue) {
+        getSlider(currentValue);
+    });
 })();
